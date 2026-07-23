@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIFEY'S COZY HUB 💖</title>
+    <!-- Soft, playful fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Cute & Cozy Palette */
+            --bg-page: #fff5f8; /* Soft pink background */
+            --bg-card: #ffffff; /* Clean white card */
+            --accent: #ff85a1; /* Cute Coral Pink */
+            --accent-dim: #ffd1dc; /* Soft Pink */
+            --text-main: #5a3d5c; /* Gentle dark purple/grey */
+            --text-muted: #a38f9d;
+            --border: #f0e6ed;
+            --feelings-happy: #ffda79; /* Warm Star Yellow */
+            --feelings-lonely: #a29bfe; /* Lonely Cloud Lavender */
+            --feelings-missyou: #fab1a0; /* Smiley Peach */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Whimsical Main Card */
+        .cozy-card {
+            background-color: var(--bg-card);
+            border: 4px solid var(--border);
+            border-radius: 20px; /* Extra round */
+            padding: 30px;
+            max-width: 440px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 .heart {
+            margin-left: 8px;
+            font-size: 1.5rem;
+            animation: pulse-cute 2s infinite;
+        }
+
+        /* Polaroid Image Section */
+        .image-polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            margin-bottom: 30px;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .image-polaroid img {
+            width: 100%;
+            display: block;
+            border-radius: 2px;
+            max-height: 350px;
+            object-fit: cover;
+        }
+
+        .polaroid-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            margin-top: 10px;
+            color: var(--text-main);
+        }
+
+        /* Comms / Voice Section */
+        .comms-section { margin-bottom: 30px; }
+        .comms-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .voice-control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #fff8fb;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .voice-meta {
+            display: flex;
+            align-items: center;
+        }
+        .voice-icon {
+            font-size: 1.4rem;
+            margin-right: 12px;
+        }
+        .voice-text {
+            text-align: left;
+        }
+        .voice-title { font-weight: 600; font-size: 0.95rem; }
+        .voice-id { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Cute Custom Toggle */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 26px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--border);
+            transition: .3s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px; width: 20px;
+            left: 3px; bottom: 3px;
+            background-color: white;
+            transition: .3s;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        input:checked + .slider { background-color: var(--accent); }
+        input:checked + .slider:before { transform: translateX(22px); }
+
+        /* Feelings Check-In Section */
+        .feelings-section { margin-bottom: 30px; }
+        .feelings-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+        }
+        .feelings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .feeling-btn {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 15px;
+            padding: 15px 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .feeling-btn:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+        .feeling-icon { font-size: 1.8rem; margin-bottom: 8px; }
+        .feeling-name { font-size: 0.8rem; font-weight: 600; }
+
+        /* Transmission Section */
+        .transmission-section { margin-bottom: 30px; }
+        .transmission-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+        }
+        
+        .transmission-box {
+            background-color: #fff8f5;
+            border: 2px dashed var(--border);
+            padding: 20px;
+            border-radius: 12px;
+            min-height: 80px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .transmission-active-signal {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--feelings-missyou);
+            border-radius: 50%;
+            animation: blink-cute 2.5s infinite;
+        }
+
+        /* Video Section Styling */
+        .video-section { 
+            margin-bottom: 30px; 
+        }
+        .video-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+        }
+        .video-frame {
+            background: white;
+            padding: 8px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+        .video-frame video {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        /* Large Bottom Action Button */
+        .cute-btn {
+            background: linear-gradient(135deg, #ff94b1, #ff758f);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 133, 161, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cute-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 133, 161, 0.6);
+        }
+
+        /* Animations */
+        @keyframes pulse-cute { 0%, 100% { transform: scale(1); opacity: 1; color: var(--accent); } 50% { transform: scale(1.1); opacity: 0.8; color: var(--accent-dim); } }
+        @keyframes blink-cute { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+    </style>
+</head>
+<body>
+
+<div class="cozy-card">
+    <h1>Hello, Wifey! <span class="heart">💖</span></h1>
+
+    <!-- Polaroid Image Section -->
+    <div class="image-polaroid">
+        <img src="us.jpg" alt="Our sweet photo">
+        <div class="polaroid-caption">Counting down the days!</div>
+    </div>
+
+    <!-- 1. Feelings Check-in -->
+    <div class="feelings-section">
+        <span class="feelings-label">// WIFEY FEELING STATUS</span>
+        <div class="feelings-grid">
+            <button class="feeling-btn" onclick="checkIn('happy')">
+                <div class="feeling-icon">⭐</div>
+                <div class="feeling-name">Happy!</div>
+            </button>
+            <button class="feeling-btn" onclick="checkIn('lonely')">
+                <div class="feeling-icon">☁️</div>
+                <div class="feeling-name">A little lonely?</div>
+            </button>
+            <button class="feeling-btn" onclick="checkIn('missyou')">
+                <div class="feeling-icon">🥺</div>
+                <div class="feeling-name">Miss You!</div>
+            </button>
+        </div>
+    </div>
+
+    <!-- 2. Voice Notes -->
+    <div class="comms-section">
+        <span class="comms-label">// COMMS_LOG [VOICE]</span>
+
+        <div class="voice-control">
+            <div class="voice-meta">
+                <span class="voice-icon">☀️</span>
+                <div class="voice-text">
+                    <span class="voice-title">Good Morning, Message</span>
+                    <span class="voice-id">FILE://morning.mp3</span>
+                </div>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="switch-morning" onclick="toggleAudio('morning')">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="voice-control">
+            <div class="voice-meta">
+                <span class="voice-icon">🌙</span>
+                <div class="voice-text">
+                    <span class="voice-title">Sweet Dreams, Message</span>
+                    <span class="voice-id">FILE://night.mp3</span>
+                </div>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="switch-night" onclick="toggleAudio('night')">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- 3. Dynamic Text Box -->
+    <div class="transmission-section">
+        <span class="transmission-label">// INCOMING_HUG_STREAM</span>
+        <div class="transmission-box">
+            <div class="transmission-active-signal" id="active-signal"></div>
+            <span id="text-stream">Ready for a hug when you are!</span>
+        </div>
+    </div>
+
+    <!-- 4. Video Memory Section (With Sound & Controls) -->
+    <div class="video-section">
+        <span class="video-label">// SWEET MOMENT CLIPPED 🎬</span>
+        <div class="video-frame">
+            <video id="memory-video" controls playsinline preload="metadata">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <button class="cute-btn" onclick="requestStory()">TAP FOR A CUTE MESSAGE 🐻</button>
+</div>
+
+<script>
+    // --- Audio & Video Coexistence Logic ---
+    const audioFiles = {
+        morning: new Audio('morning.mp3'),
+        night: new Audio('night.mp3')
+    };
+    
+    let activeTrackId = null;
+    const memoryVideo = document.getElementById('memory-video');
+
+    // Pause audio notes if video starts playing
+    if (memoryVideo) {
+        memoryVideo.addEventListener('play', () => {
+            if (activeTrackId) {
+                audioFiles[activeTrackId].pause();
+                audioFiles[activeTrackId].currentTime = 0;
+                const otherSwitch = document.getElementById(`switch-${activeTrackId}`);
+                if (otherSwitch) otherSwitch.checked = false;
+                activeTrackId = null;
+            }
+        });
+    }
+
+    // APPLE / SAFARI ENGAGEMENT UNLOCKER
+    function unlockSafariAudio() {
+        for (let key in audioFiles) {
+            audioFiles[key].play().then(() => {
+                audioFiles[key].pause(); 
+                audioFiles[key].currentTime = 0;
+            }).catch(() => {
+                /* Run quietly in the background */
+            });
+        }
+        document.removeEventListener('click', unlockSafariAudio);
+        document.removeEventListener('touchstart', unlockSafariAudio);
+    }
+    document.addEventListener('click', unlockSafariAudio);
+    document.addEventListener('touchstart', unlockSafariAudio);
+
+    function toggleAudio(trackId) {
+        const targetSwitch = document.getElementById(`switch-${trackId}`);
+        const targetAudio = audioFiles[trackId];
+
+        // Pause video if a voice note is played
+        if (memoryVideo && !memoryVideo.paused) {
+            memoryVideo.pause();
+        }
+
+        // Stop other track if playing
+        if (activeTrackId && activeTrackId !== trackId) {
+            audioFiles[activeTrackId].pause();
+            audioFiles[activeTrackId].currentTime = 0;
+            const otherSwitch = document.getElementById(`switch-${activeTrackId}`);
+            if (otherSwitch) otherSwitch.checked = false;
+        }
+
+        // Play/Pause current track
+        if (targetSwitch.checked) {
+            targetAudio.load(); 
+            
+            const playPromise = targetAudio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    activeTrackId = trackId;
+                }).catch(error => {
+                    console.log("Safari playback prevented:", error);
+                    targetSwitch.checked = false;
+                });
+            }
+
+            targetAudio.onended = function() {
+                targetSwitch.checked = false;
+                activeTrackId = null;
+            };
+        } else {
+            targetAudio.pause();
+            targetAudio.currentTime = 0;
+            activeTrackId = null;
+        }
+    }
+
+    // --- Feelings Logic ---
+    const feelingsResponses = {
+        happy: "Чим си ти среќна, и јас сум среќен со тебе што само по себе значи денеска и двајцата сме среќни",
+        lonely: "Знам, не е лесно да си далеку од твојот газда, но набргу ќе бидам до тебе. ☁️",
+        missyou: "И ти ми фалеш идиотче мое, да знаеш дека мислам на тебе у моменто, или сигурно спијам и те сонвуам. 🥺"
+    };
+
+    function checkIn(feelingKey) {
+        const textStream = document.getElementById('text-stream');
+        textStream.innerText = "Processing wifey feelings...";
+        
+        setTimeout(() => {
+            textStream.innerText = feelingsResponses[feelingKey];
+        }, 800);
+    }
+
+    // --- Upgraded Story Generator Logic ---
+    const stories = [
+     "If my day had a favorite moment, it would be every single time your name pops up on my screen. 📱💖",
+        "Fun fact: You are currently holding the world record for being the person I think about the most every single day. 🥇👑",
+        "Distance just means our eventual hug is going to break all world records for tightness and length. Get ready! 🫂⚡",
+        "Every single plan I have for the future has one very important detail in common: You right by my side. 🏡❤️",
+        "If I could send a physical hug through this screen right now, you would probably be squeezed half to death. 🐻💥",
+        "Even when work or life gets super busy, you are always that warm, quiet thought in the back of my mind keeping me going. 💭✨",
+        "I was thinking about you today and caught myself smiling at nothing like a total idiot. You do that to me! 🥰",
+        "No matter how many kilometers are between us, you are still the very first person I want to tell good news to. 💌",
+        "Counting down every single sunrise and sunset until I don't have to say goodbye at night anymore. 🌅🌙",
+        "You make loving someone feel like the easiest and most natural thing in the whole world. Thank you for being you. 🌸",
+        "I’m sending you an invisible blanket made of warm hugs, forehead kisses, and a whole lot of love right this second. 🧸🎀",
+        "Just a reminder that you are deeply loved, constantly missed, and immensely appreciated every single second of the day. 💕"
+    ];
+
+    function requestStory() {
+        const textStream = document.getElementById('text-stream');
+        textStream.innerText = "Searching memories for you...";
+
+        setTimeout(() => {
+            const randomIndex = Math.floor(Math.random() * stories.length);
+            textStream.innerText = stories[randomIndex];
+        }, 1200);
+    }
+</script>
+
+</body>
+</html>
