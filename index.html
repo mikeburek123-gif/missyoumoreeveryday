@@ -10,16 +10,16 @@
     <style>
         :root {
             /* Cute & Cozy Palette */
-            --bg-page: #fff5f8;
-            --bg-card: #ffffff;
-            --accent: #ff85a1;
-            --accent-dim: #ffd1dc;
-            --text-main: #5a3d5c;
+            --bg-page: #fff5f8; /* Soft pink background */
+            --bg-card: #ffffff; /* Clean white card */
+            --accent: #ff85a1; /* Cute Coral Pink */
+            --accent-dim: #ffd1dc; /* Soft Pink */
+            --text-main: #5a3d5c; /* Gentle dark purple/grey */
             --text-muted: #a38f9d;
             --border: #f0e6ed;
-            --feelings-happy: #ffda79;
-            --feelings-lonely: #a29bfe;
-            --feelings-missyou: #fab1a0;
+            --feelings-happy: #ffda79; /* Warm Star Yellow */
+            --feelings-lonely: #a29bfe; /* Lonely Cloud Lavender */
+            --feelings-missyou: #fab1a0; /* Smiley Peach */
         }
 
         * {
@@ -40,11 +40,11 @@
             padding: 20px;
         }
 
-        /* Main Card */
+        /* Whimsical Main Card */
         .cozy-card {
             background-color: var(--bg-card);
             border: 4px solid var(--border);
-            border-radius: 20px;
+            border-radius: 20px; /* Extra round */
             padding: 30px;
             max-width: 440px;
             width: 100%;
@@ -57,7 +57,7 @@
             font-family: 'Dancing Script', cursive;
             font-size: 2.2rem;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -67,44 +67,6 @@
             margin-left: 8px;
             font-size: 1.5rem;
             animation: pulse-cute 2s infinite;
-        }
-
-        /* Countdown Section */
-        .countdown-container {
-            background: #fff0f5;
-            border: 2px dashed var(--accent-dim);
-            border-radius: 16px;
-            padding: 15px 10px;
-            margin-bottom: 25px;
-        }
-        .countdown-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            display: block;
-            margin-bottom: 10px;
-        }
-        .countdown-timer {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .time-box {
-            text-align: center;
-        }
-        .time-box span {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-            line-height: 1.2;
-        }
-        .time-box p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            font-weight: 600;
         }
 
         /* Polaroid Image Section */
@@ -169,7 +131,7 @@
         .voice-title { font-weight: 600; font-size: 0.95rem; }
         .voice-id { font-size: 0.8rem; color: var(--text-muted); }
 
-        /* Custom Toggle Switch */
+        /* Cute Custom Toggle */
         .switch {
             position: relative;
             display: inline-block;
@@ -256,8 +218,8 @@
 
         .transmission-active-signal {
             position: absolute;
-            top: 8px;
-            right: 8px;
+            top: 5px;
+            right: 5px;
             width: 8px;
             height: 8px;
             background-color: var(--feelings-missyou);
@@ -265,7 +227,7 @@
             animation: blink-cute 2.5s infinite;
         }
 
-        /* Video Section */
+        /* Video Section Styling */
         .video-section { 
             margin-bottom: 30px; 
         }
@@ -292,7 +254,7 @@
             object-fit: cover;
         }
 
-        /* Large Action Button */
+        /* Large Bottom Action Button */
         .cute-btn {
             background: linear-gradient(135deg, #ff94b1, #ff758f);
             color: white;
@@ -327,28 +289,6 @@
 <div class="cozy-card">
     <h1>Hello, Wifey! <span class="heart">💖</span></h1>
 
-    <!-- Countdown Timer Section -->
-    <div class="countdown-container">
-        <span class="countdown-label">COUNTING DOWN UNTIL AUGUST 13TH ⌛</span>
-        <div class="countdown-timer">
-            <div class="time-box">
-                <span id="days">00</span>
-                <p>Days</p>
-            </div>
-            <div class="time-box">
-                <span id="hours">00</span>
-                <p>Hours</p>
-            </div>
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <p>Mins</p>
-            </div>
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <p>Secs</p>
-            </div>
-        </div>
-    </div>
 
     <!-- Polaroid Image Section -->
     <div class="image-polaroid">
@@ -356,7 +296,7 @@
         <div class="polaroid-caption">Counting down the days!</div>
     </div>
 
-    <!-- Feelings Check-in -->
+    <!-- 1. Feelings Check-in -->
     <div class="feelings-section">
         <span class="feelings-label">// WIFEY FEELING STATUS</span>
         <div class="feelings-grid">
@@ -375,7 +315,7 @@
         </div>
     </div>
 
-    <!-- Voice Notes -->
+    <!-- 2. Voice Notes -->
     <div class="comms-section">
         <span class="comms-label">// COMMS_LOG [VOICE]</span>
 
@@ -383,7 +323,7 @@
             <div class="voice-meta">
                 <span class="voice-icon">☀️</span>
                 <div class="voice-text">
-                    <span class="voice-title">Good Morning Message</span>
+                    <span class="voice-title">Good Morning, Message</span>
                     <span class="voice-id">FILE://morning.mp3</span>
                 </div>
             </div>
@@ -397,7 +337,7 @@
             <div class="voice-meta">
                 <span class="voice-icon">🌙</span>
                 <div class="voice-text">
-                    <span class="voice-title">Sweet Dreams Message</span>
+                    <span class="voice-title">Sweet Dreams, Message</span>
                     <span class="voice-id">FILE://night.mp3</span>
                 </div>
             </div>
@@ -408,16 +348,16 @@
         </div>
     </div>
 
-    <!-- Dynamic Text Stream -->
+    <!-- 3. Dynamic Text Box -->
     <div class="transmission-section">
         <span class="transmission-label">// INCOMING_HUG_STREAM</span>
         <div class="transmission-box">
-            <div class="transmission-active-signal"></div>
+            <div class="transmission-active-signal" id="active-signal"></div>
             <span id="text-stream">Ready for a hug when you are!</span>
         </div>
     </div>
 
-    <!-- Video Memory Section -->
+    <!-- 4. Video Memory Section (With Sound & Controls) -->
     <div class="video-section">
         <span class="video-label">// SWEET MOMENT CLIPPED 🎬</span>
         <div class="video-frame">
@@ -432,35 +372,7 @@
 </div>
 
 <script>
-    // --- Live Countdown Timer ---
-    const targetDate = new Date("August 13, 2026 00:00:00").getTime();
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
-
-        if (diff > 0) {
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
-            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
-            document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
-        } else {
-            const container = document.querySelector(".countdown-container");
-            if (container) {
-                container.innerHTML = "<span style='font-size:1.2rem; font-weight:700; color: #ff85a1;'>🎉 TODAY IS THE DAY! ❤️</span>";
-            }
-        }
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // --- Audio & Video Sync Logic ---
+    // --- Audio & Video Coexistence Logic ---
     const audioFiles = {
         morning: new Audio('morning.mp3'),
         night: new Audio('night.mp3')
@@ -469,6 +381,7 @@
     let activeTrackId = null;
     const memoryVideo = document.getElementById('memory-video');
 
+    // Pause audio notes if video starts playing
     if (memoryVideo) {
         memoryVideo.addEventListener('play', () => {
             if (activeTrackId) {
@@ -481,14 +394,32 @@
         });
     }
 
+    // APPLE / SAFARI ENGAGEMENT UNLOCKER
+    function unlockSafariAudio() {
+        for (let key in audioFiles) {
+            audioFiles[key].play().then(() => {
+                audioFiles[key].pause(); 
+                audioFiles[key].currentTime = 0;
+            }).catch(() => {
+                /* Run quietly in the background */
+            });
+        }
+        document.removeEventListener('click', unlockSafariAudio);
+        document.removeEventListener('touchstart', unlockSafariAudio);
+    }
+    document.addEventListener('click', unlockSafariAudio);
+    document.addEventListener('touchstart', unlockSafariAudio);
+
     function toggleAudio(trackId) {
         const targetSwitch = document.getElementById(`switch-${trackId}`);
         const targetAudio = audioFiles[trackId];
 
+        // Pause video if a voice note is played
         if (memoryVideo && !memoryVideo.paused) {
             memoryVideo.pause();
         }
 
+        // Stop other track if playing
         if (activeTrackId && activeTrackId !== trackId) {
             audioFiles[activeTrackId].pause();
             audioFiles[activeTrackId].currentTime = 0;
@@ -496,14 +427,16 @@
             if (otherSwitch) otherSwitch.checked = false;
         }
 
+        // Play/Pause current track
         if (targetSwitch.checked) {
             targetAudio.load(); 
+            
             const playPromise = targetAudio.play();
             if (playPromise !== undefined) {
                 playPromise.then(() => {
                     activeTrackId = trackId;
                 }).catch(error => {
-                    console.log("Audio playback error:", error);
+                    console.log("Safari playback prevented:", error);
                     targetSwitch.checked = false;
                 });
             }
@@ -519,46 +452,35 @@
         }
     }
 
-    // --- Feelings Check-In ---
+    // --- Feelings Logic ---
     const feelingsResponses = {
-        happy: "Чим си ти среќна, и јас сум среќен со тебе што само по себе значи денеска и двајцата сме среќни 🥰",
-        lonely: "Знам, не е лесно да си далеку од твојот газда, но набргу ќе бидам до тебе.  ☁️",
-        missyou: "И ти ми фалеш идиотче мое, да знаеш дека мислам на тебе у моменто, или сигурно спијам и те сонвуам.  🥺"
+        happy: "Чим си ти среќна, и јас сум среќен со тебе што само по себе значи денеска и двајцата сме среќни",
+        lonely: "Знам, не е лесно да си далеку од твојот газда, но набргу ќе бидам до тебе. ☁️",
+        missyou: "И ти ми фалеш идиотче мое, да знаеш дека мислам на тебе у моменто, или сигурно спијам и те сонвуам. 🥺"
     };
 
     function checkIn(feelingKey) {
         const textStream = document.getElementById('text-stream');
-        if (textStream) {
-            textStream.innerText = "Processing wifey feelings...";
-            setTimeout(() => {
-                textStream.innerText = feelingsResponses[feelingKey];
-            }, 800);
-        }
+        textStream.innerText = "Processing wifey feelings...";
+        
+        setTimeout(() => {
+            textStream.innerText = feelingsResponses[feelingKey];
+        }, 800);
     }
 
-    // --- Story Generator ---
+    // --- Upgraded Story Generator Logic ---
     const stories = [
-        "If distance were measured in love instead of kilometers, we wouldn't even have a single millimeter between us. 📏💖",
-        "Emergency Broadcast: A massive, unbreakable hug has been dispatched to your location and is arriving right... NOW! 🤗📦",
-        "I was thinking about you today and caught myself smiling at my phone like a total idiot. You do that to me. 🙈✨",
-        "Every single day without you is just one day closer to the moment I get to hold you and never let go. ⏳🫂",
-        "If I could pause time, I’d stop it right at the moment we finally meet again so we could stay in that hug forever. ⏰❤️",
-        "Just a quick reminder that out of all eight billion people on this planet, you are my absolute favorite human. 👑🌍",
-        "Sending you a warm virtual mug of hot cocoa, a cozy blanket, and a hundred gentle kisses on your forehead. ☕🧸💋",
-        "No matter where I am or what I'm doing, a big part of my heart is always right there with you in Germany. 📍💕",
-        "Do you know what my favorite place in the whole world is? Anywhere I'm standing right beside you. 🏠✨",
-        "If you ever feel tired or overwhelmed today, just close your eyes and remember: I'm always cheering for you, my love. 📣🥰"
+     "Znam deka ocekuvase nekoja poraka od tie so izlavat celo vreme, ama vreme e za mala promena. Deneska ke imas edna poraka i toa e voa: Posle tvojta poraka dobi ispiracija da ti napisam nesto. U momento sme na tocno 1050km eden od drug. Sakam da znaes deka sekoja tvoja poraka e procitana minimum 2-3 pati i sekogas si gi citam koa nema so drugo da pravam ili koa mi falesh. Gledam videa od nas kako se zezame ili slikicki so ti gi stavam na stranata. Sekoe tvoe dobro utro Sonce dodeka sum buden e primeteno sekoja slikicka so ti ja potrazam so e pratena i sekoj sendvic so go jades sabajle so kaskaval(tvojto omileno). Dodeka te cekam da mi dzvones dobijam najubavo custvo bukvalno najsrekjnio covek na sveto, kako da e sloboden den posle naporna rabota so edvaj go cekam. Sekoj den se povekje i povekje te sakam i tamn mislam deka voa e najvekje samo cekam da vidam poraka od tebe i pa sum zaljuben uste tolku. Fala ti nogu so me trpes pokraj toa so i jas nemam najsjajni denovi i sum malku grumpy ama da znaes deka sekogas se custvuvam isto. Fala ti za toa so sekoj den pokazuvas ljubov preku se so praves. Fala ti za site reels i tiktokovi so te potcekjat na nas. Fala mu na gospod so te imam tebe kako licnost do mene. Fala ti so znaes kako da me sakas. Fala ti za toa so se pamtes za mene. FALA TI ZA SE!!! Da znaes deka sum najgord na tebe za fakulteto so gi gleda ocenkite preska isto za toa so rabotes sekoj den kako najvrednata licnost na celo odelenie. Iako sme na distanca da znaes deka mi fale tvojo miris, toa so te mirisam koa dojdes, toa so pocnam da vozdisnuvam koa te vidam(oti si najubavata licnost na sveto), falat mi tvojte oci najubavi, tvojta guska, tvojte cunki so edvaj cekam da gi dobijam pa. I pokraj se so mi fale najmilo mi e so ne se otkaza zatoa so sme na distanca i zatoa so te imam kako ljubov. Voa go pisuvam odma posle glasovnata i da znaes deka mi se nogu spie. Znam deka ne e nesto posebno voa ama bukvalno e se od srce. NAJVEKJE NA SVETO TE SAKAM. Ti si najubava, najpametna, najdobra, najsexy, najambiciozna, najvistinska, najuctiva, najpozitivna, NAJMOJA licnost. Da znaes deka nogu mi falesh i deka ke te sakam zasekogas(kako i ti mene hehe). ALWAYS AND FOREVER. 💌🫂💖🥰💕"
     ];
 
     function requestStory() {
         const textStream = document.getElementById('text-stream');
-        if (textStream) {
-            textStream.innerText = "Searching memories for you...";
-            setTimeout(() => {
-                const randomIndex = Math.floor(Math.random() * stories.length);
-                textStream.innerText = stories[randomIndex];
-            }, 1200);
-        }
+        textStream.innerText = "Searching memories for you...";
+
+        setTimeout(() => {
+            const randomIndex = Math.floor(Math.random() * stories.length);
+            textStream.innerText = stories[randomIndex];
+        }, 1200);
     }
 </script>
 
