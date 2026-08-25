@@ -81,7 +81,7 @@
             text-transform: uppercase;
         }
 
-        /* 3-Photo Polaroid Slideshow */
+        /* 3-Photo Polaroid Slideshow (Fixed to show whole photos) */
         .slideshow-container {
             position: relative;
             background: white;
@@ -90,13 +90,17 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.04);
             margin-bottom: 20px;
+            overflow: hidden;
         }
         .slide-img {
             width: 100%;
-            height: 240px;
-            object-fit: cover;
+            max-height: 380px;
+            height: auto;
+            object-fit: contain;
+            background-color: #faf7f9;
             border-radius: 4px;
             display: none;
+            margin: 0 auto;
         }
         .slide-img.active { display: block; }
         .polaroid-caption {
@@ -173,10 +177,10 @@
             transform: translateY(-2px);
         }
 
-        /* 800x800 Master Video Player Frame */
+        /* Responsive Video Player Frame */
         .video-frame {
-            background: white;
-            padding: 8px;
+            background: #000;
+            padding: 4px;
             border: 2px solid var(--accent-dim);
             border-radius: 16px;
             margin-bottom: 20px;
@@ -186,13 +190,14 @@
             align-items: center;
         }
         .video-frame video {
-            width: 100%;
-            max-width: 800px;
-            max-height: 800px;
-            aspect-ratio: 1 / 1;
+            width: 100% !important;
+            height: auto !important;
+            max-width: 100% !important;
+            max-height: 80vh !important;
             border-radius: 10px;
-            object-fit: cover;
+            object-fit: contain !important;
             display: block;
+            margin: 0 auto;
         }
 
         /* Letter Display */
@@ -284,9 +289,9 @@
             <button class="mem-btn" onclick="revealMemory('promise')">🤝 MY PROMISE</button>
         </div>
 
-        <!-- Master Video Player (800x800 Square Format) -->
+        <!-- Master Video Player (In-line playback enabled) -->
         <div class="video-frame">
-            <video id="memory-video" controls playsinline preload="auto" width="800" height="800">
+            <video id="memory-video" controls playsinline webkit-playsinline preload="auto">
                 <source src="video.mp4" type="video/mp4">
             </video>
         </div>
